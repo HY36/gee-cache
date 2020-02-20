@@ -1,7 +1,7 @@
 package geecache
 
 import (
-	"geecache/geecacahe/lru"
+	"geecache/lru"
 	"sync"
 )
 
