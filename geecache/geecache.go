@@ -46,7 +46,7 @@ func NewGroup(name string, cacheBytes int64, getter Getter) *Group {
 		name:      name,
 		getter:    getter,
 		mainCache: cache{cacheBytes: cacheBytes},
-		loader: &&singleflight.Group{},
+		loader:    &singleflight.Group{},
 	}
 	groups[name] = g
 	return g
@@ -89,7 +89,7 @@ func (g *Group) load(key string) (value ByteView, err error) {
 	if err == nil {
 		return viewi.(ByteView), nil
 	}
-	return 
+	return
 }
 
 func (g *Group) getLocally(key string) (ByteView, error) {
